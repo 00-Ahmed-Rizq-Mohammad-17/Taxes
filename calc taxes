@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+double hourly_gross_salary, count_of_absence_hours, taxes, final_salary_before_tax ;
+        cout << " Please Enter Your Hourly_gross_salary:  " ;
+        cin  >> hourly_gross_salary;
+        cout << " Please Enter Your Count_of_absence_hours:  " ;
+        cin  >> count_of_absence_hours ;
+        final_salary_before_tax = (8*22*hourly_gross_salary) - (hourly_gross_salary*count_of_absence_hours);
+    if (final_salary_before_tax < 2500)
+        {
+         taxes = final_salary_before_tax*.025;
+        }
+            else if (final_salary_before_tax > 2500 && final_salary_before_tax < 6000 )
+                {
+                    taxes = (2500*.025) + (final_salary_before_tax - 6000)*.1;
+                }
+            else if (final_salary_before_tax > 6000 && final_salary_before_tax < 16000)
+                {
+                    taxes = (2500*.025) + (3500*.1) + (final_salary_before_tax - 6000)*.15;
+                }
+            else if (final_salary_before_tax > 16000 )
+                {
+                    taxes = (2500*.025) + (3500*.1) + (10000*.15) + (final_salary_before_tax - 16000)*.2;
+                }
+    cout << " Taxes is: " << taxes; 
